@@ -1,0 +1,49 @@
+@import "gvar";
+@media (max-width:400px)
+{
+  body{background-color: green;}
+}
+@media(min-width:400px) and (max-width:800px)
+{
+  body{background-color: purple;}
+}
+@media (min-width:800px)
+{
+  body{background-color: blue;}
+}
+
+@media (min-width:800px) and (max-width:1200px){
+.container{
+  @include colprop(960px,black);
+
+}
+
+.row{
+  @include colprop(100%,gray);
+}
+
+.col-2{
+  @include colprop(device-width,white);
+  display: inline-block;;
+}
+}
+
+@media (max-width:800px){
+.container{
+  @include colprop(400px,blue);
+
+}
+
+.row{
+  @include colprop(100%,white);
+}
+
+.col-2{
+  @include colprop(50%,grey);
+  display: inline-block;;
+}
+}
+
+.box{
+  @include boxes(100px,100px,white,10px);
+}

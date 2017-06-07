@@ -1,0 +1,70 @@
+@import 'gridsvar';
+@import 'classes';
+
+*{
+  box-sizing: border-box;
+}
+
+html, body, ul, p {
+  margin: 0;
+  padding: 0;
+  @include text-size($font);
+}
+body{
+  color: #fff;
+font-family: "Space Mono", sans-serif;
+background-color: #ff00ff;
+}
+
+
+[class*='row-']{
+  width:100%;
+  border:2px dashed red;
+  &:before,
+  &:after{
+    content:'';
+    display:table;
+    clear:both;
+  }
+}
+
+[class*='col-']{
+  float:left;
+  padding:12px;
+}
+
+@media(min-width:768px){
+  .container{
+      flex-flow: row wrap;
+  }
+  #pictures{}
+  .gallery{
+    flex-flow: row wrap;
+    img{
+      max-width: 50%;
+      max-height: 50%;
+    }
+  }
+  @for $cols from 1 through 12{
+    .col-s#{$cols}{
+      flex-basis:$col-width*$cols;
+    }
+  }
+}
+
+  @media(min-width:1200px){
+
+    @for $cols from 1 through 12{
+      .col-m#{$cols}{
+        flex-basis:$col-width*$cols;
+      }
+    }
+  }
+
+  @media(min-width:1600px){
+    @for $cols from 1 through 12{
+      .col-l#{$cols}{
+        flex-basis:$col-width*$cols;
+      }
+    }
+  }

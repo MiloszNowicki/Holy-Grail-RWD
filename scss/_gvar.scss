@@ -1,0 +1,28 @@
+$conWid:960px;
+$tablet: "(min-width: 100px) and (max-width: 640px)";
+$desktop: "(min-width: 641px)";
+
+@mixin colprop($width,$color){
+  width:$width;
+  background-color: $color;
+}
+
+@mixin boxes($width, $heigth, $color, $lmargin)
+{
+  margin: 5px;
+  @media #{$desktop}{
+  width: $width;
+  height: $heigth;
+  background-color:orange;
+  margin-left: $lmargin;
+  display: inline;
+  float: left;
+}
+  @media #{$tablet}{
+  width: 100%;
+  height: $heigth;
+  background-color:$color;
+  margin-left: $lmargin;
+  display: inline-block;;
+}
+}

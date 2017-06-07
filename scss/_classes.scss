@@ -1,0 +1,184 @@
+@import 'gridsvar';
+header{
+  height: 100px;
+  background-color: $head-color;
+
+}
+a{
+  position:fixed;
+  text-transform: uppercase;
+  text-decoration: none;
+  color:white;
+  right:0;
+  top:0;
+  display:none;
+  &:hover{
+    background-color: $nav-color;
+  }
+}
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.img-div{
+@extend img;
+  max-width:100%;
+  min-height: 600px;
+  max-height: 100%;
+  background-repeat:no-repeat;
+  background-clip: content-box;
+  background-size:100% auto;
+  margin:0px;
+
+}
+
+.gallery{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  align-items: center;
+    img{
+      padding: 12px;
+      max-width: 100%;
+      max-height: 100%;
+    }
+}
+.modal-center{
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.modal{
+  display:none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+//  overflow:auto;
+  background-color: rgba(black,0.5);
+}
+
+.modal-content{
+  display:inline-block;
+  border: white solid 5px;
+  max-width: 1570px;
+  height: auto;
+  overflow:auto;
+  width: auto;
+
+    img{
+      position:relative;
+      max-width: 100%;
+      max-height: 100%;
+      border: green solid 5px;
+    }
+}
+
+.buttons{
+  width:auto;
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.left{
+  font-size: 50px;
+  background-color: gray;
+  width:55px;
+  height: 55px;
+}
+.right{
+  font-size: 50px;
+  background-color: gray;
+  width:55px;
+  height: 55px;
+
+}
+@media(min-width:768px){
+  header{
+    &:after{content:'768';}
+  }
+}
+
+@media(min-width:1200px){
+  header{
+    &:after{content:'1200';}
+  }
+  img{
+    min-width: 50%;
+    min-height: 50%;
+  }
+  .img-div{
+    min-width:50%;
+    min-height: 50%;
+  }
+}
+
+@media(min-width:1600px){
+  header{
+    &:after{content:'1600';}
+  }
+
+}
+
+section{
+  background-color: $section-color;
+}
+
+.nav{
+  background-color: $nav-color;
+
+}
+@media(max-width:767px){
+  .nav{
+    display:none;
+  }
+
+}
+.list{
+  list-style: none;
+  li{
+    &:hover{background-color: $head-color}
+    padding:15px;
+
+  }
+}
+
+@media(max-width:1199px){
+  aside{
+    display:none;
+  }
+
+}
+
+
+aside{
+  background-color: $nav-color;
+}
+footer{
+  height: 100px;
+  background-color: $foot-color;
+}
+
+.container{
+  padding: 0;
+  margin: 0;
+  display:flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+
+  .inner{
+    min-height: 600px;
+    @media(max-width: 1199px){
+      min-height: 300px;
+    }
+  }
+
+
+p{
+  height: 100%;
+  background-color:$inner-color;
+}

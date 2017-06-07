@@ -1,0 +1,22 @@
+$mediaWidth:1200px;
+$mediaHeight:1024px;
+$col-width:100%/12;
+$colPadding:5%;
+//Sizes
+$font:15px;
+// COLORS
+$head-color:#cc33ff;
+$section-color:#ff0066;
+$insc-color:#6699ff;
+$nav-color:#ff0080;
+$foot-color:#9966ff;
+$inner-color:#b300b3;
+//$rowHeight:$mediaHeight/6;
+$cols:1;
+
+@mixin text-size($size){
+  font-size:$size+10px;
+  @media(min-width: 768px){
+    font-size:$size
+  }
+}
